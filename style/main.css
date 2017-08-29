@@ -4,37 +4,6 @@ h1 {
 h1, h2, h3 {
   font-family: 'Montserrat', sans-serif; }
 
-.wrap {
-  position: relative;
-  display: inline-block;
-  overflow: hidden; }
-
-.old-letter {
-  position: relative;
-  display: inline-block;
-  z-index: 2; }
-
-.empty {
-  position: absolute;
-  background: white;
-  width: 0.25em;
-  height: 100%;
-  z-index: 5;
-  left: 0;
-  top: 0;
-  overflow: hidden;
-  display: block;
-  animation-duration: 1.5s;
-  animation-name: jig;
-  animation-iteration-count: infinite;
-  animation-direction: alternate; }
-
-@keyframes jig {
-  from {
-    width: .0em; }
-  to {
-    width: .7em; } }
-
 .letter {
   transform: translateY(0);
   transition: all ease .2s;
@@ -61,6 +30,11 @@ h1, h2, h3 {
   top: 0;
   padding: 0.25em;
   text-transform: capitalize; }
+  .name-link {
+    text-decoration: underline;
+    color: black; }
+    .name-link:hover {
+      color: #fa4800; }
 
 body {
   display: flex;

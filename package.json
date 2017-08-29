@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "style": "node-sass style/main.scss style/main.css",
-    "pug": "pug index.pug",
+    "pug": "pug index.pug"
   },
   "author": "Miles Elliott",
   "license": "ISC",
