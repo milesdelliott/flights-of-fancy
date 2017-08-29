@@ -1,0 +1,19 @@
+{
+  "name": "flights-of-fancy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "style": "node-sass style/main.scss style/main.css",
+    "pug": "pug index.pug",
+  },
+  "author": "Miles Elliott",
+  "license": "ISC",
+  "devDependencies": {
+    "node": "0.0.0",
+    "pug": "^2.0.0-rc.3",
+    "pug-cli": "^1.0.0-alpha6",
+    "sass": "^1.0.0-beta.1"
+  }
+}

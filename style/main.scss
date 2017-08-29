@@ -1,0 +1,98 @@
+h1 {
+    text-transform: uppercase;
+}
+
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.wrap {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    &:nth-child(5) {
+        .letter {
+            //transform: scaleX(2);
+        }
+        
+    }
+}
+
+.old-letter {
+    position: relative;
+    display: inline-block;
+    z-index: 2;
+    //max-width: .6em;
+    //margin-right: .4em;
+    //overflow: hidden;
+}
+    
+.empty {
+    position: absolute;
+    background: white;
+    width: 0.25em;
+    height: 100%;
+    z-index: 5;
+    left: 0;
+    top: 0;
+    overflow:hidden;
+    display: block;
+    //transform: skewX(10deg);
+    animation-duration: 1.5s;
+    animation-name: jig;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes jig {
+  from {
+    width: .0em; 
+  }
+
+  to {
+    width: .7em;
+  }
+}
+
+.letter {
+    transform: translateY(0);
+    &--up {
+        transform: translateY(-1em);
+    }
+    transition: all ease .2s;
+    display: inline-block;
+    font-size: 0.6em;
+    letter-spacing: 0.4em;
+}
+
+.word {
+    display: block;
+    text-align: center;
+    font-family: Courier New, Courier, monospace;
+    line-height: 1.4;
+}
+
+
+.phrase {
+    flex: 1 1 auto;
+    margin: 0;
+}
+
+.name {
+    position: absolute;
+    margin: 0;
+    left: 0;
+    top: 0;
+    padding: 0.25em;
+    text-transform: capitalize;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}

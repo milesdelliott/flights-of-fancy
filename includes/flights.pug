@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+ head
+  meta(charset='utf-8')
+  title Sustainable House
+  link(href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet')
+  link(href='style/main.css' rel='stylesheet')
+  
+  meta(name='viewport' content='width=device-width,initial-scale=1')
+ body
+  - var a = 'flights'.split('');
+  - var b = 'of'.split('');
+  - var c = 'fancy'.split('');
+  - var i = 0 
+
+
+
+  h1.name Miles.
+  h1.phrase
+   span.flights.word
+    while i < a.length
+     span.letter= a[i]
+      - i++
+   span.of.word
+    - i = 0
+    while i < b.length
+     span.letter= b[i]
+      - i++
+   span.fancy.word
+    - i = 0
+    while i < c.length
+     span.letter= c[i]
+      - i++
+    
+  script(src='js/flights.js')
