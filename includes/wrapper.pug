@@ -1,0 +1,13 @@
+block view
+ - var view = {slug: 'typewriter'}
+doctype html
+html(lang="en")
+ head
+  meta(charset='utf-8')
+  title Sustainable House
+  link(href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet')
+  link(href='view/'+view.slug+'/'+view.slug+'.css' rel='stylesheet')
+  meta(name='viewport' content='width=device-width,initial-scale=1')
+ body
+  block body
+ script(src='view/'+view.slug+"/"+view.slug+'.js')

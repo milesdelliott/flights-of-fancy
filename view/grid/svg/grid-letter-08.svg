@@ -1,0 +1,12 @@
+ 
+ 
+<svg version="1.1" class="grid-letter" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 84.4 83" enable-background="new 0 0 84.4 83" xml:space="preserve" height="100%" width="100%"  preserveAspectRatio="none">
+<g class="bg">
+	<rect  class="grid-letter-bg" width="84.4" height="83"/>
+</g>
+  <path class="grid-letter-path" d="M72.2,71.1C64.1,79,54.1,83,42.2,83c-11.9,0-21.9-4-30-11.9C4.1,63.2,0,53.3,0,41.5c0-11.8,4.1-21.7,12.2-29.6
+	C20.3,4,30.3,0,42.2,0c11.9,0,21.9,4,30,11.9c8.1,7.9,12.2,17.8,12.2,29.6C84.4,53.3,80.3,63.2,72.2,71.1z M66.1,41.5
+	c0-7.2-2.3-13.3-6.9-18.3c-4.6-5.1-10.2-7.6-17-7.6c-6.7,0-12.4,2.5-17,7.6s-6.9,11.2-6.9,18.3c0,7.2,2.3,13.3,6.9,18.3
+	c4.6,5,10.2,7.5,17,7.5c6.7,0,12.4-2.5,17-7.5C63.8,54.8,66.1,48.7,66.1,41.5z"/>
+</svg>

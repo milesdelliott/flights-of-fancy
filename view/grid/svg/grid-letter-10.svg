@@ -1,0 +1,9 @@
+ 
+ 
+<svg version="1.1" class="grid-letter" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 55.2 80.3" enable-background="new 0 0 55.2 80.3" xml:space="preserve" height="100%" width="100%"  preserveAspectRatio="none">
+<g class="bg">
+	<rect  class="grid-letter-bg" width="55.2" height="80.3"/>
+</g>
+  <path class="grid-letter-path" d="M55.2,0v15.7H17.9v17.4h35.4v15.7H17.9v31.5H0V0H55.2z"/>
+</svg>

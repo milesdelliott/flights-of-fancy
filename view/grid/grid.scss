@@ -1,0 +1,62 @@
+$bg-color: #1C4572;
+$text-color: #C1272D;
+
+body {
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    background-color: $bg-color;
+   
+}
+
+h1 {
+    text-transform: uppercase;
+}
+
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.name {
+    position: absolute;
+    margin: 0;
+    left: 0;
+    top: 0;
+    padding: 0.25em;
+    text-transform: capitalize;
+    &-link {
+        text-decoration: underline;
+        color: white;
+        &:hover {
+            color: #fa4800;
+        }
+    }
+}
+
+.grid {
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    grid-template-columns: repeat(9, 1fr);
+    grid-auto-flow: row;
+    grid-auto-rows: 1fr;
+    transition: all ease .2s;
+    &-letter {
+        width: 100%;
+        height: 100%;
+        fill: white;
+        transition: all ease .2s;
+        grid-column: span 2;
+        grid-row: span 2;
+        &-bg {
+            fill: $bg-color;
+        }
+    }
+    &-item {
+        
+    }
+}
