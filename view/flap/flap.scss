@@ -1,0 +1,50 @@
+#flapper {
+    font-size: 2em;
+}
+
+.slot {
+    color: white;
+    //background: black;
+    display: inline-block;
+    padding: 0.1em;
+    min-width: 1em;
+    min-height: 1em;
+    position: absolute;
+    &:hover .flap:last-child {
+        transform: rotateX(0)
+    }
+    
+}
+
+
+.flap {
+    position: relative;
+    display: block;
+    overflow:hidden;
+    color: white;
+    background: black;
+    min-width:1em;
+    transition: all ease 1s;
+    height: 0.6em;
+    perspective: 500px;
+    &:last-child .letter {
+        position: absolute;
+        bottom:0;
+        min-width: 1em;
+        min-height: 1em;
+        
+    }
+    &:first-child {
+        transform-origin: bottom;
+    }
+    &:last-child {
+        transform-origin: top;
+        transform: rotateX(-180deg);
+        backface-visibility: hidden;
+    }
+
+}
+
+.letter {
+
+}

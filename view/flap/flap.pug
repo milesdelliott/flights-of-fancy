@@ -1,12 +1,25 @@
 extends ../../includes/wrapper.pug
 block view
-  - var view = {slug: 'grid'}
+  - var view = {slug: 'flap'}
  
 block body
-  - var i = 14 
+  - var characters = ['A', 'B', 'C', 'D', 'E', 'F']
+  - i = 0
 
 
 
   h1.name 
     a.name-link(href="https://mileselliott.me") Miles.
-  #grid.grid
+  #flapper
+    each letter in characters
+        #a.slot
+            span.flap 
+                span.letter= i
+            span.flap
+                if (i + 1 == characters.length)
+                    - i = 0
+                    span.letter= i
+                else
+                    - i++
+                    span.letter= i
+        - i++
