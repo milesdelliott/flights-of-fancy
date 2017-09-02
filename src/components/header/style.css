@@ -1,0 +1,12 @@
+.name {
+	position: absolute;
+	margin: 0;
+	left: 0;
+	top: 0;
+	padding: 0.25em;
+	text-transform: capitalize; }
+	.name a {
+	  text-decoration: underline;
+	  color: black; }
+	  .name a:hover {
+		color: #fa4800; }
