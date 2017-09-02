@@ -4,16 +4,27 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "style": "node-sass view -o view",
-    "pug": "pug index.pug"
+    "test": "eslint src && preact test",
+    "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
+    "build": "preact build",
+    "serve": "preact build && preact serve",
+    "dev": "preact watch"
   },
+  "keywords": [],
   "author": "Miles Elliott",
   "license": "ISC",
+  "eslintConfig": {
+    "extends": "eslint-config-synacor"
+  },
   "devDependencies": {
-    "node": "0.0.0",
-    "pug": "^2.0.0-rc.3",
-    "pug-cli": "^1.0.0-alpha6",
-    "sass": "^1.0.0-beta.1"
+    "eslint": "^4.5.0",
+    "eslint-config-synacor": "^1.1.1",
+    "if-env": "^1.0.0",
+    "preact-cli": "^1.4.1"
+  },
+  "dependencies": {
+    "preact": "^8.2.5",
+    "preact-compat": "^3.17.0",
+    "preact-router": "^2.5.7"
   }
 }
