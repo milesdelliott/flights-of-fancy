@@ -1,0 +1,221 @@
+.svg {
+    position:absolute;
+    height: 100%;
+    width: 100%;
+    transform-style: preserve-3d;
+}
+
+.wrapper {
+    height: 100vh;
+    width: 100vw;
+    background: #333;
+}
+
+.shine {
+    perspective: 1600px;
+    perspective-origin: 50% -240px;
+    transform-style: preserve-3d;
+    transform:rotateY(20deg);
+    height: 100vh;
+    width: 100vw;
+    
+}
+
+.f_stem {
+    transform:translateZ(00px);
+}
+
+.f_stem_stroke {
+    transform:translateZ(01px);
+}
+
+.i_stem {
+    transform:translateZ(00px);
+}
+
+.i_stem_stroke {
+    transform:translateZ(01px);
+}
+
+.h_crossbar {
+    transform:translateZ(00px); 
+}
+
+.h_crossbar_stroke {
+    transform:translateZ(01px); 
+}
+
+.h_leftstem {
+    transform:translateZ(14px); 
+}
+
+.h_leftstem_stroke {
+    transform:translateZ(15px); 
+}
+
+.h_rightstem {
+    transform:translateZ(10px); 
+}
+
+.h_rightstem_stroke {
+    transform:translateZ(11px); 
+}
+
+.t_crossbar {
+    transform:translateZ(20px);
+}
+
+.t_crossbar_stroke {
+    transform:translateZ(21px);
+}
+
+.t_stem {
+    transform:translateZ(27px);
+}
+
+.t_stem_stroke {
+    transform:translateZ(28px);
+}
+
+.l_stem {
+    transform:translateZ(15px);
+}
+
+.l_stem_stroke {
+    transform:translateZ(16px);
+}
+
+.s_bottom {
+    transform:translateZ(30px);
+}
+
+.s_bottom_stroke {
+    transform:translateZ(31px);
+}
+
+.s_top {
+    transform:translateZ(40px);
+}
+
+.s_top_stroke {
+    transform:translateZ(41px);
+}
+
+.g_stem {
+    transform:translateZ(30px);
+}
+
+.g_stem_stroke {
+    transform:translateZ(31px);
+}
+
+
+.f_crossbar {
+    transform:translateZ(23px);
+}
+
+
+.f_crossbar_stroke {
+    transform:translateZ(24px);
+}
+
+
+.g_crossbar {
+    transform:translateZ(40px);
+}
+
+
+.g_crossbar_stroke {
+    transform:translateZ(41px);
+}
+
+.i_crossbar {
+    transform:translateZ(20px);
+}
+
+
+.i_crossbar_stroke {
+    transform:translateZ(21px);
+}
+
+.fa_main {
+    transform:translateZ(-10px); 
+}
+
+.fa_main_stroke {
+    transform:translateZ(-9px); 
+}
+
+.c_main {
+    transform:translateZ(12px); 
+}
+
+.c_main_stroke {
+    transform:translateZ(13px); 
+}
+
+.n_main {
+    transform:translateZ(8px); 
+}
+
+.n_main_stroke {
+    transform:translateZ(9px); 
+}
+
+.a_main {
+    transform:translateZ(02px); 
+}
+
+.a_main_stroke {
+    transform:translateZ(02px); 
+}
+
+.y_main {
+    transform:translateZ(20px); 
+}
+
+.y_main_stroke {
+    transform:translateZ(21px); 
+}
+
+
+.o_main {
+    transform:translateZ(22px); 
+}
+
+.o_main_stroke {
+    transform:translateZ(24px); 
+}
+
+.o_dot {
+    transform:translateZ(35px); 
+}
+
+.of_main {
+    transform:translateZ(23px); 
+}
+
+.of_main_stroke {
+    transform:translateZ(23px); 
+}
+
+.right_dot_main {
+    transform:translateZ(26px); 
+}
+
+.right_dot_stroke {
+    transform:translateZ(28px); 
+}
+
+.lower_dot_main {
+    transform:translateZ(20px); 
+}
+
+.lower_dot_stroke {
+    transform:translateZ(22px); 
+}
+
+
+
+
+
