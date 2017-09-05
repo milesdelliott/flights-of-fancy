@@ -23,7 +23,7 @@ export default class App extends Component {
 			<div id="app">
 				<Header />
 				<Router onChange={this.handleRoute}>
-					<Home path="/" />
+					<Typewriter path="/" />
 					<Typewriter path="/typewriter/" />
 					<Destination path="/destination/" />
 					<Profile path="/profile/" user="me" />
