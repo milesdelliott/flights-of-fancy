@@ -8,7 +8,7 @@ export default class Header extends Component {
 	}
 	render() {
 		return (
-				<h1 class={style.name}><a>Miles.</a></h1>
+				<h1 class={style.name}><a href="https://mileselliott.me">Miles.</a></h1>
 		);
 	}
 }
