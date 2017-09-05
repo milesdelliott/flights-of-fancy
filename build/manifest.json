@@ -1,6 +1,6 @@
 {
-  "name": "Preact PWA",
-  "short_name": "Preact PWA",
+  "name": "Miles. Flightes of Fancy",
+  "short_name": "Flights of Fancy",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",

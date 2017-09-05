@@ -1075,7 +1075,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var _ref = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 	'a',
-	null,
+	{ href: 'https://mileselliott.me' },
 	'Miles.'
 );
 
