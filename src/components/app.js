@@ -6,8 +6,14 @@ import Home from '../routes/home';
 import Typewriter from '../routes/typewriter';
 import Destination from '../routes/destination';
 import Shine from '../routes/shine';
+import Glide from '../routes/glide';
 // import Home from 'async!./home';
 // import Profile from 'async!./profile';
+
+function RandomRoute(props) {
+
+	return props.children[Math.floor(Math.random() * props.children.length)]
+}
 
 export default class App extends Component {
 	/** Gets fired when the route changes.
@@ -23,8 +29,13 @@ export default class App extends Component {
 			<div id="app">
 				<Header />
 				<Router onChange={this.handleRoute}>
-					<Shine path="/" />
+					<RandomRoute path="/">
+						<Shine />
+						<Typewriter />
+						<Glide />
+					</RandomRoute>
 					<Typewriter path="/typewriter/" />
+					<Glide path="/glide/" />
 					<Destination path="/destination/" />
 					<Shine path="/shine/" />
 				</Router>

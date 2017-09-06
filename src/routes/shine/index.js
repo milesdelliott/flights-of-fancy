@@ -73,6 +73,8 @@ export default class Shine extends Component {
 	render() {
 		return (
 			<div class={style.wrapper}>
+			<h2 class="extra-text">Flights of Fancy</h2>
+			<p class="extra-text">Points Come into view <br /> Shapes latching onto you <br /> There's nothing you can do. <br /><br /> Hold True.</p>
 			<section id="container" class={style.shine + ' flight'} style>
 				<Path class={style.f_stem} fill="#0FF" d="M105 202v164h68.2l19.6-56h21l19-54h15l19.2-54"/>
 				<Path class={style.f_stem_stroke} d="M173.2 369h-67.5c-2 0-3.7-1.3-3.7-3.3v-164c0-2 1.8-3.7 3.7-3.7H267c1 0 2.2.7 3 1.6s.7 2.2.3 3.3L251 256.7c-.4 1.4-1.7 2.2-3.2 2.2h-12.5L217 310.7c-.4 1.4-1.7 2.3-3.2 2.3h-18.5l-18.7 53.7c-.5 1.4-2 2.3-3.4 2.3zm-64.2-7h61.8l18.7-53.7c.5-1.4 1.8-2.3 3.3-2.3h18.5l18.2-51.7c.5-1.4 1.8-2.3 3.3-2.3h12.5l16.7-47H109v157z"/>

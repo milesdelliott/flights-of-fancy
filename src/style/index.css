@@ -18,3 +18,10 @@ html, body {
 #app {
 	height: 100%;
 }
+
+.extra-text {
+	height: 1px;
+	position: absolute;
+	width: 0px;
+	overflow: hidden;
+}
