@@ -6,13 +6,20 @@ import Home from '../routes/home';
 import Typewriter from '../routes/typewriter';
 import Destination from '../routes/destination';
 import Shine from '../routes/shine';
-import Glide from '../routes/glide';
+import Clide from '../routes/glide';
+import Glide from '../routes/snide';
 // import Home from 'async!./home';
 // import Profile from 'async!./profile';
 
 function RandomRoute(props) {
 
 	return props.children[Math.floor(Math.random() * props.children.length)]
+}
+
+function Test(props) {
+	return (
+		<h1>Test</h1>
+	);
 }
 
 export default class App extends Component {
@@ -33,9 +40,13 @@ export default class App extends Component {
 						<Shine />
 						<Typewriter />
 						<Glide />
+						<Clide />
+						<Test />
 					</RandomRoute>
 					<Typewriter path="/typewriter/" />
 					<Glide path="/glide/" />
+					<Clide path="/clide/" />
+					<Test path="/test/" />
 					<Destination path="/destination/" />
 					<Shine path="/shine/" />
 				</Router>
