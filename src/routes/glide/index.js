@@ -2,7 +2,7 @@ import { h, Component } from 'preact';
 import style from './style';
 import { TweenLite, TimelineLite } from 'gsap';
 // ?????
-import DrawSVGPlugin from '../../lib/vendor/greensock-js-simply-green/src/bonus-files-for-npm-users/DrawSVGPlugin.js';
+//import DrawSVGPlugin from '../../lib/vendor/greensock-js-simply-green/src/bonus-files-for-npm-users/DrawSVGPlugin.js';
 
 
 function RawSVG() {
@@ -141,6 +141,7 @@ export default class Glide extends Component {
 					return <Path id={e.id} d={e.d} key={i} />
 				})}
 				</svg>
+				<script src="assets/js/DrawSVGPlugin.min.js"></script>
 			</section>
 		);
 	}
