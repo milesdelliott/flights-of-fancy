@@ -12,7 +12,7 @@ export default class Glide extends Component {
 	constructor() {
 		super();
 		this.state = {
-			inPlace: false,
+			inPlace: true,
 			paths: [
 				{id: "f1_top", pointA: '00', pointB: '100', d: "M118.4 142.2c-11.8 2-23.8 3-35.7 3"},
 				{id: "f1_crossbar", pointA: '00', pointB: '100', d: "M114 173.3c-10 1.6-21 2.4-31.3 2.3"},
@@ -75,7 +75,7 @@ export default class Glide extends Component {
 	componentWillUnmount() {
 	}
 
-	handleClick() {
+	runAnim() {
 		let inPlace = this.state.inPlace
 		let action = inPlace ? this.undraw : this.draw
 		this.state.paths.forEach(function(e, i) {
@@ -87,7 +87,7 @@ export default class Glide extends Component {
 
 	render() {
 		return (
-			<section class={style.glide + ' flight'} onClick={this.handleClick.bind(this)}>
+			<section class={style.glide + ' flight'} onClick={this.runAnim.bind(this)} onLoad={this.runAnim.bind(this)}>
 				<svg class={style.glide} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 465 532.5">
 				{this.state.paths.map((e, i)=> {
 					return <Path id={e.id} d={e.d} key={i} />
