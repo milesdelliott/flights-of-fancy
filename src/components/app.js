@@ -34,6 +34,7 @@ export default class App extends Component {
 						<Shine />
 						<Typewriter />
 						<Glide />
+						<Link />
 					</RandomRoute>
 					<Typewriter path="/typewriter/" />
 					<Glide path="/glide/" />
