@@ -9,3 +9,4 @@ Typographic Experimentation
 * As birds eye view of city
 * RGB Distorted
 * Split flap display
+* Wallpaper with framed words

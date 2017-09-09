@@ -4,3 +4,23 @@
     background-color: #000
 }
 
+.cubeRight {
+    fill: #141414;
+}
+
+.cubeTop {
+    fill: #191919;
+}
+
+.cubeLeft {
+    fill: #000;
+}
+
+.cubeRight, .cubeTop, .cubeLeft {
+    fill-opacity: 1;
+}
+
+.cubeBG {
+    height: 100%;
+    width: 100%;
+}
