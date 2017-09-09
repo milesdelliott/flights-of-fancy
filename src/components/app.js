@@ -7,6 +7,7 @@ import Typewriter from '../routes/typewriter';
 import Destination from '../routes/destination';
 import Shine from '../routes/shine';
 import Glide from '../routes/glide';
+import Link from '../routes/link';
 // import Home from 'async!./home';
 // import Profile from 'async!./profile';
 
@@ -36,6 +37,7 @@ export default class App extends Component {
 					</RandomRoute>
 					<Typewriter path="/typewriter/" />
 					<Glide path="/glide/" />
+					<Link path="/link/" />
 					<Destination path="/destination/" />
 					<Shine path="/shine/" />
 				</Router>

@@ -4,7 +4,7 @@ import style from './style';
 
 function Path(props) {
 	return (
-		<path class="letter" id={props.id} fill="none" stroke="#000" stroke-miterlimit="10" d={props.d} />
+		<path class="letter" id={props.id} fill="none" stroke="#22313F" stroke-miterlimit="10" d={props.d}  />
 	)
 }
 
@@ -51,17 +51,24 @@ export default class Glide extends Component {
 		};
 	}
 
-	componentDidMount() {
+	componentDidMount() {/*
 		this.state.paths.forEach(function(e, i) {
 			this.draw(e, i);
 		}, this);
 		this.setState({inPlace:true});
-	}
+	*/}
 
 	draw(e) {
 		let pointA = e.pointA || '10%';
 		let pointB = e.pointB || '40%';
-		TweenLite.fromTo("#"+e.id, 2, {drawSVG: "99% 100%"}, {drawSVG: pointA + " " + pointB})
+		return TweenLite.fromTo("#"+e.id, 2, {drawSVG: "100% 100%"}, {drawSVG: pointA + " " + pointB})
+		
+	}
+
+	dedraw(e) {
+		let pointA = e.pointA || '10%';
+		let pointB = e.pointB || '40%';
+		return TweenLite.fromTo("#"+e.id, 2, {drawSVG: "0% 100%"}, {drawSVG: pointA + " " + pointB})
 		
 	}
 
@@ -75,26 +82,36 @@ export default class Glide extends Component {
 	componentWillUnmount() {
 	}
 
-	runAnim() {
-		let inPlace = this.state.inPlace
-		let action = inPlace ? this.undraw : this.draw
-		this.state.paths.forEach(function(e, i) {
-			action(e, i);
+	tweensInit() {
+		
+	}
 
-		}, this);
-		this.setState({inPlace: !inPlace})
+	runAnim() {
+		let newState = this.state
+		if (!newState.tweens) {
+			newState.tweens = newState.paths.map(function(e, i) {
+				return this.draw(e, i);
+
+			}, this);
+		} else {
+			newState.tweens.map((e, i)=> {
+				e.reversed() ? e.play() : e.reverse()
+			})
+		}
+		this.setState(newState)
 	}
 
 	render() {
 		return (
-			<section class={style.glide + ' flight'} onClick={this.runAnim.bind(this)} onLoad={this.runAnim.bind(this)}>
-				<svg class={style.glide} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 465 532.5">
+			<section class={style.glide + ' flight'} onClick={this.runAnim.bind(this)}  >
+				<svg class={style.glide} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 465 532.5" >
+				
 				{this.state.paths.map((e, i)=> {
 					return <Path id={e.id} d={e.d} key={i} />
 				})}
 				</svg>
-				<script src="assets/js/DrawSVGPlugin.min.js"></script>
 				<script src="assets/js/TweenLite.min.js"></script>
+				<script onLoad={this.runAnim.bind(this)} src="assets/js/DrawSVGPlugin.min.js"></script>
 			</section>
 		);
 	}
