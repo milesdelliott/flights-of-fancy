@@ -1,10 +1,11 @@
 import { h, Component } from 'preact';
 import style from './style';
+import Flight from '../../components/flight';
 
 
 function Path(props) {
 	return (
-		<path class="letter" id={props.id} fill="none" stroke="#22313F" stroke-miterlimit="10" d={props.d}  />
+		<path class="letter" id={props.id} fill="none" stroke-width={props.strokeWidth} stroke={props.strokeColor} stroke-miterlimit="10" d={props.d}  />
 	)
 }
 
@@ -13,6 +14,7 @@ export default class Glide extends Component {
 		super();
 		this.state = {
 			inPlace: true,
+			show: false,
 			paths: [
 				{id: "f1_top", pointA: '00', pointB: '100', d: "M118.4 142.2c-11.8 2-23.8 3-35.7 3"},
 				{id: "f1_crossbar", pointA: '00', pointB: '100', d: "M114 173.3c-10 1.6-21 2.4-31.3 2.3"},
@@ -58,25 +60,18 @@ export default class Glide extends Component {
 		this.setState({inPlace:true});
 	*/}
 
-	draw(e) {
+	draw(e, i) {
 		let pointA = e.pointA || '10%';
 		let pointB = e.pointB || '40%';
-		return TweenLite.fromTo("#"+e.id, 2, {drawSVG: "100% 100%"}, {drawSVG: pointA + " " + pointB})
-		
+
+		return TweenLite.fromTo("#"+e.id, 2, {drawSVG: "100% 100%"}, {drawSVG: pointA + " " + pointB, delay: 0.2, ease: Power1.easeInOut})
 	}
 
-	dedraw(e) {
+	drawAccent(e, i) {
 		let pointA = e.pointA || '10%';
 		let pointB = e.pointB || '40%';
-		return TweenLite.fromTo("#"+e.id, 2, {drawSVG: "0% 100%"}, {drawSVG: pointA + " " + pointB})
-		
-	}
 
-
-	undraw(e) {
-		let pointA = e.pointA || '10%';
-		let pointB = e.pointB || '40%';
-		TweenLite.fromTo("#"+e.id, 2, {drawSVG: pointA + " " + pointB}, {drawSVG: "100% 100%"})
+		return TweenLite.fromTo("#"+e.id+"_c", 1, {drawSVG: "100% 100%"}, {drawSVG: pointA + " " + pointB, delay: 0, ease: Power1.easeOut})
 	}
 
 	componentWillUnmount() {
@@ -89,30 +84,53 @@ export default class Glide extends Component {
 	runAnim() {
 		let newState = this.state
 		if (!newState.tweens) {
-			newState.tweens = newState.paths.map(function(e, i) {
-				return this.draw(e, i);
-
+			let tweens = newState.paths.map(function(e, i) {
+				let a = this.draw(e, i);
+				return a
 			}, this);
+			let accentTweens = newState.paths.map(function(e, i) {
+				return this.drawAccent(e, i);
+			}, this);
+
+			newState.tweens = accentTweens.concat(tweens)
+
 		} else {
 			newState.tweens.map((e, i)=> {
-				e.reversed() ? e.play() : e.reverse()
+				let reverse = e.reversed() == false ? false : true
+				
+				let id = e.target[0].id
+				let delay = id.slice(-2,id.length) == '_c' ? 0 : 0.4;
+				reverse ? e.delay(delay).play() : e.delay(delay).reverse()
 			})
+
+			
 		}
+		newState.show = true;
 		this.setState(newState)
 	}
 
 	render() {
 		return (
+			<Flight {...this.props} >
 			<section class={style.glide + ' flight'} onClick={this.runAnim.bind(this)}  >
-				<svg class={style.glide} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 465 532.5" >
-				
+				<svg class={style.glide + ' ' + (this.state.show ? style.show : '')} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 465 532.5" >
+				<g>
 				{this.state.paths.map((e, i)=> {
-					return <Path id={e.id} d={e.d} key={i} />
+					return <Path id={e.id+"_c"} d={e.d} key={i} strokeWidth={1} strokeColor={'#FFFFFF'} />
 				})}
+				</g>
+				<g>
+				{this.state.paths.map((e, i)=> {
+					return <Path id={e.id} d={e.d} key={i} strokeWidth={2} strokeColor={'#22313F'} />
+				})}
+				</g>
+				
+				
 				</svg>
 				<script src="assets/js/TweenLite.min.js"></script>
 				<script onLoad={this.runAnim.bind(this)} src="assets/js/DrawSVGPlugin.min.js"></script>
 			</section>
+			</Flight>
 		);
 	}
 }

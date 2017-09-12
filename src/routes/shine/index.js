@@ -1,5 +1,6 @@
 import { h, Component } from 'preact';
 import style from './style';
+import Flight from '../../components/flight';
 
 function SVGWrapper(props) {
 	return (
@@ -72,6 +73,7 @@ export default class Shine extends Component {
 
 	render() {
 		return (
+			<Flight {...this.props} >
 			<div class={style.wrapper}>
 			<h2 class="extra-text">Flights of Fancy</h2>
 			<p class="extra-text">Points Come into view <br /> Shapes latching onto you <br /> There's nothing you can do. <br /><br /> Hold True.</p>
@@ -128,6 +130,7 @@ export default class Shine extends Component {
 
 			</section>
 			</div>
+			</Flight>
 		);
 	}
 }

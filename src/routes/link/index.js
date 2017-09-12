@@ -1,5 +1,6 @@
 import { h, Component } from 'preact';
 import style from './style';
+import Flight from '../../components/flight';
 
 
 function Polyline(props) {
@@ -45,20 +46,18 @@ export default class Link extends Component {
 				
 			]
 		};
+
 	}
 
 	componentDidMount() {
-		//let a = document.getElementsByClassName('letter')
-		//let polylines = [].map.call(a, (e,i)=> {return '{id: "a", pointA: "0", pointB: "40", points: "' + e.attributes.points.value + '"}'})
-		//console.log(polylines.toString())
+		this.runAnim()
 	}
 
 	draw(e, i) {
 		let pointA = e.pointA || '10%';
 		let pointB = e.pointB || '40%';
 		let speed = e.speed || 5;
-		console.log(i)
-		return TweenLite.fromTo("#"+e.id, speed, {drawSVG: "100% 100%"}, {drawSVG: pointA + " " + pointB, delay: (i * .1), ease: Power2.easeInOut})
+		return TweenLite.fromTo("#"+e.id, speed, {drawSVG: "100% 100%"}, {drawSVG: pointA + " " + pointB, delay: (i * .1), ease: Power1.easeInOut})
 		
 	}
 
@@ -86,7 +85,8 @@ export default class Link extends Component {
 
 	render() {
 		return (
-			<section class={style.link + ' flight'} onClick={this.runAnim.bind(this)}  >
+			<Flight {...this.props} >
+			<section class={style.link + ' flight ' + this.props.c.name} onClick={this.runAnim.bind(this)}  >
 				<svg  class={style.link} version="1.1" id="Layer_4_copy" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 918 636"  >
 				<defs>
 				<pattern id="cubepat" x="1.405" y="0.7" width=".0728" height=".18" patternContentUnits="userSpaceOnUse">
@@ -131,8 +131,9 @@ export default class Link extends Component {
 
 				</svg>
 				<script src="assets/js/TweenLite.min.js"></script>
-				<script onLoad={this.runAnim.bind(this)} src="assets/js/DrawSVGPlugin.min.js"></script>
+				<script src="assets/js/DrawSVGPlugin.min.js"></script>
 			</section>
+			</Flight>
 		);
 	}
 }

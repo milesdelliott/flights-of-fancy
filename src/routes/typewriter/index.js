@@ -1,5 +1,6 @@
 import { h, Component } from 'preact';
 import style from './style';
+import Flight from '../../components/flight';
 
 function Word(props) {
 	function getRotation() {
@@ -63,6 +64,7 @@ export default class Typewriter extends Component {
 
 	render() {
 		return (
+			<Flight {...this.props}>
 			<section class={style.typewriter + ' flight'}>
 				<h1 class={style.phrase}>
 					{this.state.phrase.split(' ').map((word, i) => {
@@ -70,6 +72,7 @@ export default class Typewriter extends Component {
 					})}
 				</h1>
 			</section>
+			</Flight>
 		);
 	}
 }

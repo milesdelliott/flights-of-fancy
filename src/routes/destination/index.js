@@ -1,5 +1,6 @@
 import { h, Component } from 'preact';
 import style from './style';
+import Flight from '../../components/flight';
 
 
 export default class Destination extends Component {
@@ -20,10 +21,12 @@ export default class Destination extends Component {
 
 	render() {
 		return (
+			<Flight {...this.props} >
 			<section class={style.destination + ' flight'}>
 				<h1 class={style.phrase}>
 				</h1>
 			</section>
+			</Flight>
 		);
 	}
 }
