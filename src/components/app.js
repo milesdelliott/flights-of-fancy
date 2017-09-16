@@ -9,6 +9,8 @@ import Destination from '../routes/destination';
 import Shine from '../routes/shine';
 import Glide from '../routes/glide';
 import Link from '../routes/link';
+import Factory from '../routes/factory';
+import Wave from '../routes/wave';
 // import Home from 'async!./home';
 // import Profile from 'async!./profile';
 
@@ -35,7 +37,9 @@ export default class App extends Component {
 				{name: 'destination', component: Destination, color: "#8dc6ff"},
 				{name: 'shine', component: Shine, color: "#FBB03B"},
 				{name: 'glide', component: Glide, color: "#8dc6ff"},
-				{name: 'link', component: Link, color: '#06FFF8'}
+				{name: 'link', component: Link, color: '#06FFF8'},
+				{name: 'factory', component: Factory, color: '#06FFF8'},
+				{name: 'wave', component: Wave, color: '#06FFF8'}
 			]
 		}
 		

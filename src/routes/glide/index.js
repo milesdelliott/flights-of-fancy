@@ -64,7 +64,7 @@ export default class Glide extends Component {
 		let pointA = e.pointA || '10%';
 		let pointB = e.pointB || '40%';
 
-		return TweenLite.fromTo("#"+e.id, 2, {drawSVG: "100% 100%"}, {drawSVG: pointA + " " + pointB, delay: 0.2, ease: Power1.easeInOut})
+		return TweenLite.fromTo("#"+e.id, 2, {drawSVG: "100% 100%"}, {drawSVG: pointA + " " + pointB, delay: 0, ease: Power1.easeInOut})
 	}
 
 	drawAccent(e, i) {
@@ -98,9 +98,7 @@ export default class Glide extends Component {
 			newState.tweens.map((e, i)=> {
 				let reverse = e.reversed() == false ? false : true
 				
-				let id = e.target[0].id
-				let delay = id.slice(-2,id.length) == '_c' ? 0 : 0.4;
-				reverse ? e.delay(delay).play() : e.delay(delay).reverse()
+				reverse ? e.play() : e.reverse()
 			})
 
 			

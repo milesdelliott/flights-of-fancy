@@ -89,6 +89,10 @@ export default class Link extends Component {
 			<section class={style.link + ' flight ' + this.props.c.name} onClick={this.runAnim.bind(this)}  >
 				<svg  class={style.link} version="1.1" id="Layer_4_copy" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 918 636"  >
 				<defs>
+				<radialGradient id="radialMask"  cx="0.5" cy="0.5" r="1" fx="0.5" fy="0.5" fr="20%">
+					<stop offset="0%" stop-color="black" stop-opacity="0" />
+					<stop offset="100%" stop-color="black" stop-opacity="1" />
+				</radialGradient>
 				<pattern id="cubepat" x="1.405" y="0.7" width=".0728" height=".18" patternContentUnits="userSpaceOnUse">
 				<g>
 				<polygon class={style.cubeTop} points="0,60 0,60 34.6,40 0,20.1 -34.6,40.1 0,60 		"/>
@@ -120,6 +124,7 @@ export default class Link extends Component {
 					<feGaussianBlur result="blur" stdDeviation="10" />
 				</filter>
 				<rect class={style.cubeBG} fill="url(#cubepat)" width="100%" height="100%"/>
+				<rect class={style.cubeBG} fill="url(#radialMask)" width="100%" height="100%"/>
 				{this.state.paths.map((e, i)=> {
 					return <Polyline id={e.id} strokeWidth={2} points={e.points} key={i} />
 				})}
@@ -128,7 +133,7 @@ export default class Link extends Component {
 					return <Polyline id={e.id} strokeWidth={3} points={e.points} key={i} />
 				})}
 				</g>
-
+				
 				</svg>
 				<script src="assets/js/TweenLite.min.js"></script>
 				<script src="assets/js/DrawSVGPlugin.min.js"></script>

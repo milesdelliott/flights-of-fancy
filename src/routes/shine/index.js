@@ -67,7 +67,7 @@ export default class Shine extends Component {
 	
 		let xVal = (x - width)/width
 		let yVal = ((y - height)/height) * -1
-		let dVal =  (Math.sqrt((xVal * xVal) + (yVal * yVal))) * 10
+		let dVal =  (Math.sqrt((xVal * xVal) + (yVal * yVal))) * 15
 		document.getElementById('container').setAttribute('style', 'transform: rotate3d('+yVal+','+xVal+',0,'+dVal+'deg)');
 	}
 
