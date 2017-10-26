@@ -1,6 +1,7 @@
 import { h, Component } from 'preact';
 import style from './style';
 import Flight from '../../components/flight';
+import anime from 'animejs';
 
 function Line(props) {
 	return (
